@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Avatar, AvatarGroup, Button } from "@nextui-org/react";
 import { Modal, ModalContent, ModalBody, Drawer, DrawerContent, DrawerHeader, DrawerBody, DrawerFooter, useDisclosure } from "@nextui-org/react";
 import confetti from 'canvas-confetti';
-import { db } from '../utils/firebase'; // Adjust the path according to your project structure
+import { db } from '../utils/firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import * as motion from "motion/react-client";
 import { Image } from "@nextui-org/react";
@@ -65,7 +65,7 @@ function DisplayImage() {
         const sortedData = data.sort((a, b) => b.id - a.id);
         setImagesData(sortedData);
 
-        if (sortedData.length > 0) {
+        if (sortedData) {
           setVisible(true);
           setTimeout(() => {
             setVisible(false);
