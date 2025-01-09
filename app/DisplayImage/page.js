@@ -38,8 +38,7 @@ function DisplayImage() {
         matrix: [0.03333333333333333, 0, 0, 0.03333333333333333, -5.566666666666666, -5.533333333333333]
       });
     }
-  }, []); // Run once on client side
-
+  }, []);
   const handleConfetti = () => {
     confetti({
       ...confettiDefaults,
