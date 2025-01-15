@@ -10,7 +10,15 @@
 // module.exports = withPWA(nextConfig);
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-}
- 
-module.exports = nextConfig
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "my-blob-store.public.blob.vercel-storage.com",
+        port: "",
+      },
+    ],
+  },
+};
+
+module.exports = nextConfig;
