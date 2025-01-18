@@ -66,7 +66,6 @@ function DisplayImage() {
           throw new Error('Failed to fetch blob URLs');
         }
         const data = await response.json();
-        console.log(data);
         const combinedItems = combineItemsByCoreIdentifier(data);
         
         setImagesData(combinedItems);
@@ -88,8 +87,6 @@ function DisplayImage() {
     setTimeout(handleConfetti, 0);
     setTimeout(handleConfetti, 200);
   }
-console.log(imagesData);
-
   return (
     <div className="flex min-h-screen">
       <Button className="float-right absolute right-0 bottom-0 mb-2 mr-2" onPress={onOpen}>Settings</Button>
