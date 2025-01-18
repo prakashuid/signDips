@@ -38,8 +38,27 @@ function DisplayImage() {
       shapes: ['circle']
     });
   };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch('/api/handler'); // Replace with your endpoint
+  
+  //       if (!response.ok) {
+  //         throw new Error(`HTTP error! status: ${response.status}`);
+  //       }
+  
+  //       const data = await response.json();
+  //       setDatas(data); // Assuming you're using useState
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error);
+  //     }
+  //   };
+  
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
+
     const fetchImages = async () => {
       try {
         const response = await fetch('/api/file');
@@ -47,6 +66,7 @@ function DisplayImage() {
           throw new Error('Failed to fetch blob URLs');
         }
         const data = await response.json();
+        console.log(data);
         const combinedItems = combineItemsByCoreIdentifier(data);
         
         setImagesData(combinedItems);
